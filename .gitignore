@@ -1,44 +1,30 @@
 ```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+# Build artifacts and executables
+*.spec
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+*.exe
+*.dll
+*.so
+*.pyc
+__pycache__/
 
-# Environment
-.venv/
+# Dependencies
 venv/
-env/
-ENV/
+.venv/
+.env
+.env.local
 
-# IDE
+# Editors
 .vscode/
 .idea/
-*.swp
-*.swo
-*.tmp
 
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
-# OS
+# OS specific
 .DS_Store
 Thumbs.db
 ```
