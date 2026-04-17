@@ -1,0 +1,4 @@
+paramiko>=3.0.0
+sshtunnel>=0.4.0
+asyncio>=3.4.3
+tkinter-tooltip>=1.1.0
