@@ -1,0 +1,82 @@
+{
+  "tunnels": [
+    {
+      "id": "tunnel1",
+      "name": "Production Server",
+      "enabled": true,
+      "ssh": {
+        "host": "example.com",
+        "port": 22,
+        "username": "user",
+        "password": null,
+        "private_key": "/path/to/private/key",
+        "passphrase": null
+      },
+      "forwarding": {
+        "local_port": 8080,
+        "remote_host": "localhost",
+        "remote_port": 80
+      },
+      "proxy": {
+        "type": "socks5",
+        "enabled": true,
+        "port": 9090
+      }
+    },
+    {
+      "id": "tunnel2",
+      "name": "Database Server",
+      "enabled": true,
+      "ssh": {
+        "host": "db.example.com",
+        "port": 22,
+        "username": "admin",
+        "password": "secure_password",
+        "private_key": null,
+        "passphrase": null
+      },
+      "forwarding": {
+        "local_port": 3307,
+        "remote_host": "localhost",
+        "remote_port": 3306
+      },
+      "proxy": {
+        "type": "http",
+        "enabled": false,
+        "port": null
+      }
+    },
+    {
+      "id": "tunnel3",
+      "name": "Development Server",
+      "enabled": false,
+      "ssh": {
+        "host": "dev.example.com",
+        "port": 2222,
+        "username": "developer",
+        "password": null,
+        "private_key": "~/.ssh/id_ed25519",
+        "passphrase": "key_passphrase"
+      },
+      "forwarding": {
+        "local_port": 5000,
+        "remote_host": "127.0.0.1",
+        "remote_port": 5000
+      },
+      "proxy": {
+        "type": "socks5",
+        "enabled": true,
+        "port": 1080
+      }
+    }
+  ],
+  "settings": {
+    "log_level": "INFO",
+    "log_file": "logs/tunnels.log",
+    "auto_reconnect": true,
+    "reconnect_delay": 5,
+    "max_reconnect_attempts": 10,
+    "known_hosts_file": "~/.ssh/known_hosts",
+    "timeout": 30
+  }
+}
