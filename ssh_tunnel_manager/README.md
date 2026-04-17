@@ -198,6 +198,35 @@ python -m src.gui --config config/tunnels.json
 - 📊 Визуальные карточки туннелей с индикаторами статуса
 - ▶️/⏹ Кнопки запуска/остановки для каждого туннеля
 - ✏️ Редактирование туннелей через диалоговое окно
+
+---
+
+## 📦 Компиляция в .exe (Windows)
+
+### Автоматическая сборка
+
+1. Скопируйте проект на Windows машину
+2. Дважды кликните на `build_windows.bat`
+3. Готовые файлы появятся в папке `dist\`:
+   - `SSH_Tunnel_Manager.exe` — GUI версия
+   - `SSH_Tunnel_CLI.exe` — CLI версия
+
+### Ручная сборка
+
+```powershell
+# Установка зависимостей
+pip install paramiko sshtunnel pyinstaller
+
+# GUI версия
+pyinstaller --onefile --windowed --name "SSH_Tunnel_Manager" --add-data "config;tunnels.json" src/gui.py
+
+# CLI версия
+pyinstaller --onefile --name "SSH_Tunnel_CLI" src/main.py
+```
+
+Подробная инструкция: [BUILD_WINDOWS.md](BUILD_WINDOWS.md)
+
+#### Возможности GUI (продолжение):
 - ➕ Добавление новых туннелей
 - 🗑 Удаление туннелей
 - 💾 Сохранение конфигурации
